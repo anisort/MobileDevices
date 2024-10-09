@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YourAppName</string>
+    <!-- LoginActivity -->
+    <string name="login_form">Login form</string>
+    <string name="username_hint">Username</string>
+    <string name="login_button">Login</string>
+    <string name="settings_button">Settings</string>
+
+    <string name="choose_theme">Choose Theme:</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="save_button">Save</string>
+
+    <string name="quiz_title">Quiz</string>
+    <string name="answer_true">True</string>
+    <string name="answer_false">False</string>
+    <string name="previous_button">Previous</string>
+    <string name="next_button">Next</string>
+    <string name="finish_button">Finish</string>
+
+    <string name="result_score">Score:</string>
+    <string name="logout_button">Log out</string>
+</resources>

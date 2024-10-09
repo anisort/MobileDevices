@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TestProject</string>
+    <string name="text_view_main">Hello from MainActivity</string>
+    <string name="text_view_first">Welcome to FirstTestActivity</string>
+    <string name="text_view_second">This is SecondTestActivity</string>
+    <string name="button_go_to_first">Go to FirstTestActivity</string>
+    <string name="button_go_to_second">Go to SecondTestActivity</string>
+    <string name="button_go_to_main">Go to MainActivity</string>
+    <string name="editText_hint">Input text</string>
+    <string name="switch_text">SwitchCompat</string>
+    <string name="checkbox_text">Checkbox</string>
+    <string name="radioButton1_text">radioButton1</string>
+    <string name="radioButton2_text">radioButton2</string>
+    <string name="image_view_description">image</string>
+</resources>
