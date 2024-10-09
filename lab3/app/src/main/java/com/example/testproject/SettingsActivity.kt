@@ -14,11 +14,9 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Зчитуємо обрану тему з SharedPreferences
         sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE)
         val theme = PreferenceManager.getTheme(this)
 
-        // Встановлюємо тему перед викликом super.onCreate
         if (theme == "dark") {
             setTheme(R.style.Theme_MyApp_Dark)
         } else {
@@ -33,7 +31,6 @@ class SettingsActivity : AppCompatActivity() {
 
         val themeGroup = findViewById<RadioGroup>(R.id.radio_group_theme)
 
-        // Встановлюємо стан RadioButton відповідно до обраної теми
         when (theme) {
             "dark" -> themeGroup.check(R.id.radio_dark)
             "light" -> themeGroup.check(R.id.radio_light)
@@ -43,17 +40,17 @@ class SettingsActivity : AppCompatActivity() {
             when (checkedId) {
                 R.id.radio_light -> {
                     PreferenceManager.saveTheme(this, "light")
-                    recreate() // Перезапускаємо активність, щоб застосувати нову тему
+                    recreate()
                 }
                 R.id.radio_dark -> {
                     PreferenceManager.saveTheme(this, "dark")
-                    recreate() // Перезапускаємо активність, щоб застосувати нову тему
+                    recreate()
                 }
             }
         }
 
         findViewById<Button>(R.id.button_save).setOnClickListener {
-            finish() // Повертаємося до минулої Activity
+            finish()
         }
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">YourAppName</string>
-    <!-- LoginActivity -->
+    <string name="app_name">Quiz Application</string>
+
     <string name="login_form">Login form</string>
     <string name="username_hint">Username</string>
     <string name="login_button">Login</string>

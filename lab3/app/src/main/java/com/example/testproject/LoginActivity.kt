@@ -19,11 +19,9 @@ class LoginActivity : AppCompatActivity() {
     private val SETTINGS_REQUEST_CODE = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Зчитуємо обрану тему з SharedPreferences
         sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE)
         val theme = PreferenceManager.getTheme(this)
 
-        // Встановлюємо тему перед викликом super.onCreate
         if (theme == "dark") {
             setTheme(R.style.Theme_MyApp_Dark)
         } else {
@@ -42,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("USERNAME", username)
                 startActivity(intent)
-                finish() // Завершити цю активність
+                finish()
             } else {
                 errorTextView.visibility = View.VISIBLE
                 errorTextView.text = "Please enter your username."
@@ -51,11 +49,10 @@ class LoginActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.button_settings).setOnClickListener {
             val intent = Intent(this, SettingsActivity::class.java)
-            intent.putExtra("USERNAME", "") // Передаємо ім'я користувача в налаштування
-            startActivityForResult(intent, SETTINGS_REQUEST_CODE) // Запускаємо налаштування
+            intent.putExtra("USERNAME", "")
+            startActivityForResult(intent, SETTINGS_REQUEST_CODE)
         }
     }
-    // Обробка результату з SettingsActivity
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == SETTINGS_REQUEST_CODE) {
@@ -66,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 setTheme(R.style.Theme_MyApp_Light)
             }
-            recreate() // Перезапускаємо активність, щоб застосувати нову тему
+            recreate()
         }
     }
 }

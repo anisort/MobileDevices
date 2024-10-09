@@ -15,9 +15,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
 
     private val questions = listOf(
-        "Is the sky blue?", // true
-        "Is fire cold?", // false
-        "Is water wet?" // true
+        "Is the sky blue?",
+        "Is fire cold?",
+        "Is water wet?"
     )
 
     private val answers = listOf(true, false, true)
@@ -31,14 +31,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var buttonNext: Button
     private lateinit var buttonFinish: Button
 
-    private val SETTINGS_REQUEST_CODE = 1 // Код запиту для налаштувань
+    private val SETTINGS_REQUEST_CODE = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Зчитуємо обрану тему з SharedPreferences
         sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE)
         val theme = PreferenceManager.getTheme(this)
 
-        // Встановлюємо тему перед викликом super.onCreate
         if (theme == "dark") {
             setTheme(R.style.Theme_MyApp_Dark)
         } else {
@@ -48,10 +46,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Отримуємо ім'я користувача
         username = intent.getStringExtra("USERNAME")
 
-        // Ініціалізуємо елементи інтерфейсу
         usernameTextView = findViewById(R.id.username_quiz)
         questionTextView = findViewById(R.id.question_text)
         answerGroup = findViewById(R.id.answer_group)
@@ -90,23 +86,21 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.button_settings).setOnClickListener {
             val intent = Intent(this, SettingsActivity::class.java)
-            intent.putExtra("USERNAME", username) // Передаємо ім'я користувача в налаштування
-            startActivityForResult(intent, SETTINGS_REQUEST_CODE) // Запускаємо налаштування
+            intent.putExtra("USERNAME", username)
+            startActivityForResult(intent, SETTINGS_REQUEST_CODE)
         }
     }
 
-    // Обробка результату з SettingsActivity
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == SETTINGS_REQUEST_CODE) {
-            // Оновлюємо тему, якщо вона була змінена
             val theme = PreferenceManager.getTheme(this)
             if (theme == "dark") {
                 setTheme(R.style.Theme_MyApp_Dark)
             } else {
                 setTheme(R.style.Theme_MyApp_Light)
             }
-            recreate() // Перезапускаємо активність, щоб застосувати нову тему
+            recreate()
         }
     }
 
