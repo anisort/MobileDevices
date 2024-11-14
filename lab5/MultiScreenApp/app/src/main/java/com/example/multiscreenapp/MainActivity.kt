@@ -38,7 +38,7 @@ fun AppNavigation(isDarkMode: Boolean, onToggleDarkMode: (Boolean) -> Unit) {
 
     NavHost(navController = navController, startDestination = "home") {
         composable("home") {
-            HomeScreen(navController, isDarkMode, onToggleDarkMode)
+            HomeScreen(navController)
         }
         composable("details/{itemId}") { backStackEntry ->
             val itemId = backStackEntry.arguments?.getString("itemId")

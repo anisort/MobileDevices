@@ -11,7 +11,7 @@ import androidx.compose.foundation.lazy.items
 
 
 @Composable
-fun HomeScreen(navController: NavController, isDarkMode: Boolean, onToggleDarkMode: (Boolean) -> Unit) {
+fun HomeScreen(navController: NavController) {
     var text by remember { mutableStateOf("") }
     val items = listOf("Item 1", "Item 2", "Item 3")
 

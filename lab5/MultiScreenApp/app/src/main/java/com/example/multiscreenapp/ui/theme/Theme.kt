@@ -21,7 +21,6 @@ private val DarkTextColor = Color(0xFFFFFFFF)
 private val LightPrimaryColor = Color(0xFF3700B3)
 private val DarkPrimaryColor = Color(0xFFBB86FC)
 
-// Темна кольорова схема
 private val DarkColorScheme = darkColorScheme(
     primary = DarkPrimaryColor,
     background = DarkBackgroundColor,
